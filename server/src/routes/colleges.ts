@@ -1,4 +1,4 @@
-import { Router, Response } from 'express';
+import { Router, Response, Request } from 'express';
 import pool from '../config/database';
 import { AuthRequest, optionalAuth } from '../middleware/auth';
 
@@ -69,11 +69,11 @@ router.get('/', optionalAuth, async (req: AuthRequest, res: Response): Promise<v
 });
 
 // Get distinct locations and courses for filter options
-router.get('/filters', async (_req, res: Response): Promise<void> => {
+router.get('/filters', async (_req: Request, res: Response): Promise<void> => {
   try {
     const locations = await pool.query('SELECT DISTINCT state FROM colleges ORDER BY state');
     const courses = await pool.query('SELECT DISTINCT name FROM courses ORDER BY name');
-    res.json({ locations: locations.rows.map(r => r.state), courses: courses.rows.map(r => r.name) });
+    res.json({ locations: locations.rows.map((r: any) => r.state), courses: courses.rows.map((r: any) => r.name) });
   } catch (error) {
     res.status(500).json({ error: 'Server error' });
   }
@@ -104,7 +104,7 @@ router.get('/:id', optionalAuth, async (req: AuthRequest, res: Response): Promis
 });
 
 // Compare colleges
-router.post('/compare', async (req, res: Response): Promise<void> => {
+router.post('/compare', async (req: Request, res: Response): Promise<void> => {
   try {
     const { college_ids } = req.body;
     if (!college_ids || !Array.isArray(college_ids) || college_ids.length < 2 || college_ids.length > 3) {
