@@ -140,11 +140,30 @@ const seedDatabase = async () => {
     await client.query('DELETE FROM courses');
     await client.query('DELETE FROM colleges');
 
+    // Ensure each college has an image_url and tags
+    const tagPool = ['engineering', 'management', 'research', 'technology', 'liberal-arts', 'medical', 'design', 'science', 'private', 'public', 'autonomous', 'government'];
+    const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    const pickTags = (count = 3) => {
+      return Array.from({ length: count }, () => tagPool[Math.floor(Math.random() * tagPool.length)]).filter((v, i, a) => a.indexOf(v) === i);
+    };
+
     for (const college of finalColleges) {
+      const c = college as any;
+      if (!c.image_url) {
+        const seed = slugify(c.name || `${c.state}-${c.city}`);
+        c.image_url = `https://picsum.photos/seed/${seed}/800/450`;
+      }
+      if (!c.tags) {
+        c.tags = pickTags(3);
+      }
+    }
+
+    for (const college of finalColleges) {
+      const c = college as any;
       const result = await client.query(
-        `INSERT INTO colleges (name, location, city, state, type, established, rating, fees_min, fees_max, description, campus_size, website, placement_rate, avg_package, highest_package)
-         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15) RETURNING id`,
-        [college.name, college.location, college.city, college.state, college.type, college.established, college.rating, college.fees_min, college.fees_max, college.description, college.campus_size, college.website, college.placement_rate, college.avg_package, college.highest_package]
+        `INSERT INTO colleges (name, location, city, state, type, established, rating, fees_min, fees_max, description, image_url, campus_size, website, placement_rate, avg_package, highest_package, tags)
+         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17) RETURNING id`,
+        [c.name, c.location, c.city, c.state, c.type, c.established, c.rating, c.fees_min, c.fees_max, c.description, c.image_url, c.campus_size, c.website, c.placement_rate, c.avg_package, c.highest_package, c.tags]
       );
       const collegeId = result.rows[0].id;
 

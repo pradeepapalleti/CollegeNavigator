@@ -20,6 +20,7 @@ const createTables = async () => {
         fees_max INTEGER NOT NULL DEFAULT 0,
         description TEXT,
         image_url VARCHAR(500),
+        tags TEXT[],
         campus_size VARCHAR(100),
         website VARCHAR(255),
         placement_rate DECIMAL(4,1),
@@ -32,6 +33,10 @@ const createTables = async () => {
     await client.query('CREATE INDEX IF NOT EXISTS idx_colleges_rating ON colleges (rating DESC)');
     await client.query('CREATE INDEX IF NOT EXISTS idx_colleges_fees_min ON colleges (fees_min)');
     await client.query('CREATE INDEX IF NOT EXISTS idx_colleges_placement_rate ON colleges (placement_rate DESC)');
+    await client.query('CREATE INDEX IF NOT EXISTS idx_colleges_tags ON colleges USING GIN (tags)');
+
+    // Ensure tags column exists on existing installations
+    await client.query('ALTER TABLE colleges ADD COLUMN IF NOT EXISTS tags TEXT[]');
 
     // Courses table
     await client.query(`
