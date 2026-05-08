@@ -4,6 +4,64 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../config/database"));
+const collegeImages = {
+    'Indian Institute of Technology Bombay': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Indian Institute of Technology Delhi': 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Indian Institute of Technology Madras': 'https://images.unsplash.com/photo-1581078426770-67b56b55aa22?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Indian Institute of Technology Kanpur': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Indian Institute of Technology Kharagpur': 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Birla Institute of Technology and Science Pilani': 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'National Institute of Technology Trichy': 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Vellore Institute of Technology': 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Delhi University': 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Manipal Institute of Technology': 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Indian Institute of Science Bangalore': 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'SRM Institute of Science and Technology': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Jadavpur University': 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Amity University Noida': 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'National Institute of Technology Warangal': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Christ University Bangalore': 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Thapar Institute of Engineering': 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'PSG College of Technology': 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Symbiosis International University': 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'College of Engineering Pune': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Anna University': 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Lovely Professional University': 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'IIIT Hyderabad': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'PES University': 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'RV College of Engineering': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'National Institute of Technology Surathkal': 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'National Institute of Technology Calicut': 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Indian Institute of Technology Roorkee': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Indian Institute of Technology Guwahati': 'https://images.unsplash.com/photo-1581078426770-67b56b55aa22?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'National Institute of Technology Rourkela': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Birla Institute of Technology Mesra': 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Shiv Nadar University': 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Ashoka University': 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'University of Hyderabad': 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Banaras Hindu University': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Aligarh Muslim University': 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Jamia Millia Islamia': 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Sastra Deemed University': 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'VIT-AP University': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'DY Patil International University': 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Kalinga Institute of Industrial Technology': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=450&fit=crop&crop=entropy&auto=format',
+    'Manipal University Jaipur': 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=450&fit=crop&crop=entropy&auto=format',
+};
+const getCollegeImage = (collegeName) => {
+    if (collegeImages[collegeName]) {
+        return collegeImages[collegeName];
+    }
+    // Fallback to themed images based on college type
+    const slug = collegeName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    if (collegeName.toLowerCase().includes('institute of technology') || collegeName.toLowerCase().includes('iit')) {
+        return `https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=450&fit=crop&crop=entropy&auto=format&query=${slug}`;
+    }
+    if (collegeName.toLowerCase().includes('university')) {
+        return `https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=450&fit=crop&crop=entropy&auto=format&query=${slug}`;
+    }
+    return `https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=450&fit=crop&crop=entropy&auto=format&query=${slug}`;
+};
 const colleges = [
     { name: 'Indian Institute of Technology Bombay', location: 'Powai, Mumbai', city: 'Mumbai', state: 'Maharashtra', type: 'Public', established: 1958, rating: 4.8, fees_min: 200000, fees_max: 250000, description: 'Premier engineering institute known for cutting-edge research and world-class faculty.', campus_size: '550 acres', website: 'https://www.iitb.ac.in', placement_rate: 95.0, avg_package: 2100000, highest_package: 30000000 },
     { name: 'Indian Institute of Technology Delhi', location: 'Hauz Khas, New Delhi', city: 'New Delhi', state: 'Delhi', type: 'Public', established: 1961, rating: 4.7, fees_min: 200000, fees_max: 250000, description: 'One of India\'s top engineering institutions with strong industry connections.', campus_size: '325 acres', website: 'https://www.iitd.ac.in', placement_rate: 93.0, avg_package: 2000000, highest_package: 28000000 },
@@ -135,15 +193,13 @@ const seedDatabase = async () => {
         await client.query('DELETE FROM colleges');
         // Ensure each college has an image_url and tags
         const tagPool = ['engineering', 'management', 'research', 'technology', 'liberal-arts', 'medical', 'design', 'science', 'private', 'public', 'autonomous', 'government'];
-        const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
         const pickTags = (count = 3) => {
             return Array.from({ length: count }, () => tagPool[Math.floor(Math.random() * tagPool.length)]).filter((v, i, a) => a.indexOf(v) === i);
         };
         for (const college of finalColleges) {
             const c = college;
             if (!c.image_url) {
-                const seed = slugify(c.name || `${c.state}-${c.city}`);
-                c.image_url = `https://picsum.photos/seed/${seed}/800/450`;
+                c.image_url = getCollegeImage(c.name);
             }
             if (!c.tags) {
                 c.tags = pickTags(3);
