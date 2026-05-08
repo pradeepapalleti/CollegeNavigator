@@ -30,6 +30,23 @@ const colleges = [
     { name: 'IIIT Hyderabad', location: 'Gachibowli, Hyderabad', city: 'Hyderabad', state: 'Telangana', type: 'Public', established: 1998, rating: 4.5, fees_min: 200000, fees_max: 350000, description: 'Top-tier institute focused on IT and related fields with strong research output.', campus_size: '66 acres', website: 'https://www.iiit.ac.in', placement_rate: 92.0, avg_package: 1800000, highest_package: 25000000 },
     { name: 'PES University', location: 'Banashankari, Bangalore', city: 'Bangalore', state: 'Karnataka', type: 'Private', established: 1972, rating: 4.0, fees_min: 300000, fees_max: 500000, description: 'Bangalore\'s top private engineering university with focus on innovation.', campus_size: '38 acres', website: 'https://www.pes.edu', placement_rate: 80.0, avg_package: 900000, highest_package: 13000000 },
     { name: 'RV College of Engineering', location: 'Mysore Road, Bangalore', city: 'Bangalore', state: 'Karnataka', type: 'Private', established: 1963, rating: 4.1, fees_min: 200000, fees_max: 400000, description: 'One of the most reputed engineering colleges in Bangalore.', campus_size: '52 acres', website: 'https://www.rvce.edu.in', placement_rate: 84.0, avg_package: 1000000, highest_package: 14000000 },
+    { name: 'National Institute of Technology Surathkal', location: 'Surathkal, Mangalore', city: 'Mangalore', state: 'Karnataka', type: 'Public', established: 1960, rating: 4.4, fees_min: 160000, fees_max: 220000, description: 'Coastal NIT with strong core engineering programs and excellent campus life.', campus_size: '295 acres', website: 'https://www.nitk.ac.in', placement_rate: 87.0, avg_package: 1250000, highest_package: 17000000 },
+    { name: 'National Institute of Technology Calicut', location: 'Kozhikode', city: 'Kozhikode', state: 'Kerala', type: 'Public', established: 1961, rating: 4.3, fees_min: 150000, fees_max: 210000, description: 'Leading NIT in South India with a strong reputation for engineering and design.', campus_size: '300 acres', website: 'https://www.nitc.ac.in', placement_rate: 86.0, avg_package: 1180000, highest_package: 16000000 },
+    { name: 'Indian Institute of Technology Roorkee', location: 'Roorkee', city: 'Roorkee', state: 'Uttarakhand', type: 'Public', established: 1847, rating: 4.7, fees_min: 200000, fees_max: 260000, description: 'Oldest technical institute in Asia with a rich legacy in engineering and architecture.', campus_size: '365 acres', website: 'https://www.iitr.ac.in', placement_rate: 91.0, avg_package: 1850000, highest_package: 26000000 },
+    { name: 'Indian Institute of Technology Guwahati', location: 'Amingaon, Guwahati', city: 'Guwahati', state: 'Assam', type: 'Public', established: 1994, rating: 4.6, fees_min: 190000, fees_max: 240000, description: 'A modern IIT with strong research output and a scenic Brahmaputra-side campus.', campus_size: '700 acres', website: 'https://www.iitg.ac.in', placement_rate: 92.0, avg_package: 1750000, highest_package: 25000000 },
+    { name: 'National Institute of Technology Rourkela', location: 'Rourkela', city: 'Rourkela', state: 'Odisha', type: 'Public', established: 1961, rating: 4.2, fees_min: 150000, fees_max: 210000, description: 'Top NIT known for strong academics, research culture, and campus infrastructure.', campus_size: '647 acres', website: 'https://www.nitrkl.ac.in', placement_rate: 85.0, avg_package: 1120000, highest_package: 15000000 },
+    { name: 'Birla Institute of Technology Mesra', location: 'Mesra, Ranchi', city: 'Ranchi', state: 'Jharkhand', type: 'Private', established: 1955, rating: 4.0, fees_min: 250000, fees_max: 420000, description: 'Established technical university with a broad portfolio of engineering and science programs.', campus_size: '780 acres', website: 'https://www.bitmesra.ac.in', placement_rate: 78.0, avg_package: 820000, highest_package: 11000000 },
+    { name: 'Shiv Nadar University', location: 'Dadri, Greater Noida', city: 'Greater Noida', state: 'Uttar Pradesh', type: 'Private', established: 2011, rating: 4.2, fees_min: 350000, fees_max: 650000, description: 'Research-oriented private university with a multidisciplinary academic model.', campus_size: '286 acres', website: 'https://snu.edu.in', placement_rate: 81.0, avg_package: 950000, highest_package: 12500000 },
+    { name: 'Ashoka University', location: 'Rajiv Gandhi Education City, Sonipat', city: 'Sonipat', state: 'Haryana', type: 'Private', established: 2014, rating: 4.4, fees_min: 500000, fees_max: 800000, description: 'Liberal arts and sciences university focused on research, writing, and interdisciplinary learning.', campus_size: '250 acres', website: 'https://www.ashoka.edu.in', placement_rate: 74.0, avg_package: 1200000, highest_package: 15000000 },
+    { name: 'University of Hyderabad', location: 'Gachibowli, Hyderabad', city: 'Hyderabad', state: 'Telangana', type: 'Public', established: 1974, rating: 4.5, fees_min: 40000, fees_max: 120000, description: 'Premier central university with top research programs across sciences and humanities.', campus_size: '2300 acres', website: 'https://uohyd.ac.in', placement_rate: 72.0, avg_package: 700000, highest_package: 10000000 },
+    { name: 'Banaras Hindu University', location: 'Varanasi', city: 'Varanasi', state: 'Uttar Pradesh', type: 'Public', established: 1916, rating: 4.6, fees_min: 20000, fees_max: 90000, description: 'Historic central university with a vast academic ecosystem and diverse programs.', campus_size: '1300 acres', website: 'https://www.bhu.ac.in', placement_rate: 76.0, avg_package: 800000, highest_package: 12000000 },
+    { name: 'Aligarh Muslim University', location: 'Aligarh', city: 'Aligarh', state: 'Uttar Pradesh', type: 'Public', established: 1920, rating: 4.2, fees_min: 30000, fees_max: 100000, description: 'Large public university known for engineering, medicine, and humanities.', campus_size: '1155 acres', website: 'https://www.amu.ac.in', placement_rate: 71.0, avg_package: 650000, highest_package: 9000000 },
+    { name: 'Jamia Millia Islamia', location: 'Jamia Nagar, New Delhi', city: 'New Delhi', state: 'Delhi', type: 'Public', established: 1920, rating: 4.3, fees_min: 25000, fees_max: 120000, description: 'Central university with strong programs in engineering, architecture, and media studies.', campus_size: '250 acres', website: 'https://jmi.ac.in', placement_rate: 73.0, avg_package: 750000, highest_package: 11000000 },
+    { name: 'Sastra Deemed University', location: 'Thanjavur', city: 'Thanjavur', state: 'Tamil Nadu', type: 'Private', established: 1984, rating: 4.0, fees_min: 180000, fees_max: 320000, description: 'Deemed university with a strong technical curriculum and good placement outcomes.', campus_size: '232 acres', website: 'https://www.sastra.edu', placement_rate: 82.0, avg_package: 900000, highest_package: 12000000 },
+    { name: 'VIT-AP University', location: 'Inavolu, Amaravati', city: 'Guntur', state: 'Andhra Pradesh', type: 'Private', established: 2017, rating: 3.9, fees_min: 250000, fees_max: 420000, description: 'Modern private campus with a focus on industry-ready curricula and labs.', campus_size: '200 acres', website: 'https://vitap.ac.in', placement_rate: 79.0, avg_package: 780000, highest_package: 10000000 },
+    { name: 'DY Patil International University', location: 'Akurdi, Pune', city: 'Pune', state: 'Maharashtra', type: 'Private', established: 2018, rating: 3.8, fees_min: 220000, fees_max: 380000, description: 'Emerging private university with modern infrastructure and varied professional programs.', campus_size: '100 acres', website: 'https://dypatil.edu', placement_rate: 68.0, avg_package: 600000, highest_package: 8000000 },
+    { name: 'Kalinga Institute of Industrial Technology', location: 'Patia, Bhubaneswar', city: 'Bhubaneswar', state: 'Odisha', type: 'Private', established: 1992, rating: 4.1, fees_min: 300000, fees_max: 520000, description: 'Large private university with strong technical and management offerings.', campus_size: '2500 acres', website: 'https://kiit.ac.in', placement_rate: 80.0, avg_package: 920000, highest_package: 13000000 },
+    { name: 'Manipal University Jaipur', location: 'Dehmi Kalan, Jaipur', city: 'Jaipur', state: 'Rajasthan', type: 'Private', established: 2011, rating: 3.9, fees_min: 220000, fees_max: 420000, description: 'Multi-disciplinary private university with a growing engineering and management ecosystem.', campus_size: '122 acres', website: 'https://jaipur.manipal.edu', placement_rate: 72.0, avg_package: 650000, highest_package: 9500000 },
 ];
 const coursesByType = {
     engineering: [
@@ -61,6 +78,51 @@ const reviewTemplates = [
 ];
 const names = ['Arjun Sharma', 'Priya Patel', 'Rahul Verma', 'Sneha Iyer', 'Amit Kumar', 'Divya Reddy', 'Rohan Singh', 'Kavya Nair'];
 const seedDatabase = async () => {
+    // Ensure each state has at least MIN_PER_STATE colleges by augmenting the base list
+    const MIN_PER_STATE = 10;
+    const finalColleges = [...colleges];
+    const stateCounts = finalColleges.reduce((acc, c) => {
+        acc[c.state] = (acc[c.state] || 0) + 1;
+        return acc;
+    }, {});
+    const states = Object.keys(stateCounts);
+    for (const state of states) {
+        while ((stateCounts[state] || 0) < MIN_PER_STATE) {
+            const n = (stateCounts[state] || 0) + 1;
+            const name = `${state} Institute of Technology ${n}`;
+            const city = `${state} City ${n}`;
+            const location = `${city}`;
+            const type = Math.random() > 0.5 ? 'Public' : 'Private';
+            const established = 1950 + Math.floor(Math.random() * 70);
+            const rating = +(3 + Math.random() * 2).toFixed(1);
+            const fees_min = 50000 + Math.floor(Math.random() * 200000);
+            const fees_max = fees_min + 100000 + Math.floor(Math.random() * 400000);
+            const description = `Auto-generated college in ${state} to meet seeding requirements.`;
+            const campus_size = `${50 + Math.floor(Math.random() * 500)} acres`;
+            const website = `https://www.${name.replace(/\s+/g, '').toLowerCase()}.edu`;
+            const placement_rate = 60 + Math.floor(Math.random() * 40);
+            const avg_package = 300000 + Math.floor(Math.random() * 1200000);
+            const highest_package = Math.floor(avg_package * (3 + Math.floor(Math.random() * 8)));
+            finalColleges.push({
+                name,
+                location,
+                city,
+                state,
+                type,
+                established,
+                rating,
+                fees_min,
+                fees_max,
+                description,
+                campus_size,
+                website,
+                placement_rate,
+                avg_package,
+                highest_package,
+            });
+            stateCounts[state] = (stateCounts[state] || 0) + 1;
+        }
+    }
     const client = await database_1.default.connect();
     try {
         await client.query('BEGIN');
@@ -71,9 +133,26 @@ const seedDatabase = async () => {
         await client.query('DELETE FROM placements');
         await client.query('DELETE FROM courses');
         await client.query('DELETE FROM colleges');
-        for (const college of colleges) {
-            const result = await client.query(`INSERT INTO colleges (name, location, city, state, type, established, rating, fees_min, fees_max, description, campus_size, website, placement_rate, avg_package, highest_package)
-         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15) RETURNING id`, [college.name, college.location, college.city, college.state, college.type, college.established, college.rating, college.fees_min, college.fees_max, college.description, college.campus_size, college.website, college.placement_rate, college.avg_package, college.highest_package]);
+        // Ensure each college has an image_url and tags
+        const tagPool = ['engineering', 'management', 'research', 'technology', 'liberal-arts', 'medical', 'design', 'science', 'private', 'public', 'autonomous', 'government'];
+        const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+        const pickTags = (count = 3) => {
+            return Array.from({ length: count }, () => tagPool[Math.floor(Math.random() * tagPool.length)]).filter((v, i, a) => a.indexOf(v) === i);
+        };
+        for (const college of finalColleges) {
+            const c = college;
+            if (!c.image_url) {
+                const seed = slugify(c.name || `${c.state}-${c.city}`);
+                c.image_url = `https://picsum.photos/seed/${seed}/800/450`;
+            }
+            if (!c.tags) {
+                c.tags = pickTags(3);
+            }
+        }
+        for (const college of finalColleges) {
+            const c = college;
+            const result = await client.query(`INSERT INTO colleges (name, location, city, state, type, established, rating, fees_min, fees_max, description, image_url, campus_size, website, placement_rate, avg_package, highest_package, tags)
+         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17) RETURNING id`, [c.name, c.location, c.city, c.state, c.type, c.established, c.rating, c.fees_min, c.fees_max, c.description, c.image_url, c.campus_size, c.website, c.placement_rate, c.avg_package, c.highest_package, c.tags]);
             const collegeId = result.rows[0].id;
             // Add courses
             const allCourses = [...coursesByType.engineering, ...coursesByType.pg];
@@ -100,7 +179,7 @@ const seedDatabase = async () => {
             }
         }
         await client.query('COMMIT');
-        console.log(`✅ Seeded ${colleges.length} colleges with courses, placements, and reviews`);
+        console.log(`✅ Seeded ${finalColleges.length} colleges with courses, placements, and reviews`);
     }
     catch (error) {
         await client.query('ROLLBACK');
@@ -112,4 +191,11 @@ const seedDatabase = async () => {
     }
 };
 exports.default = seedDatabase;
-//# sourceMappingURL=seed.js.map
+if (require.main === module) {
+    seedDatabase()
+        .then(() => process.exit(0))
+        .catch((error) => {
+        console.error('❌ Seed failed:', error);
+        process.exit(1);
+    });
+}

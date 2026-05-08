@@ -14,4 +14,3 @@ pool.on('error', (err) => {
     process.exit(-1);
 });
 exports.default = pool;
-//# sourceMappingURL=database.js.map

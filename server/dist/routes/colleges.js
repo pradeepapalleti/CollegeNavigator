@@ -66,7 +66,7 @@ router.get('/filters', async (_req, res) => {
     try {
         const locations = await database_1.default.query('SELECT DISTINCT state FROM colleges ORDER BY state');
         const courses = await database_1.default.query('SELECT DISTINCT name FROM courses ORDER BY name');
-        res.json({ locations: locations.rows.map(r => r.state), courses: courses.rows.map(r => r.name) });
+        res.json({ locations: locations.rows.map((r) => r.state), courses: courses.rows.map((r) => r.name) });
     }
     catch (error) {
         res.status(500).json({ error: 'Server error' });
@@ -115,4 +115,3 @@ router.post('/compare', async (req, res) => {
     }
 });
 exports.default = router;
-//# sourceMappingURL=colleges.js.map

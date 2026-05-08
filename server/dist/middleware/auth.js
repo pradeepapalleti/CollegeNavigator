@@ -37,4 +37,3 @@ const optionalAuth = (req, _res, next) => {
     next();
 };
 exports.optionalAuth = optionalAuth;
-//# sourceMappingURL=auth.js.map
