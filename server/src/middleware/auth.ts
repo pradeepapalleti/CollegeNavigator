@@ -1,14 +1,13 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
+import { AuthRequest } from '../types/express';
+
+export { AuthRequest };
 
 const jwtSecret = process.env.JWT_SECRET;
 
 if (!jwtSecret) {
   throw new Error('JWT_SECRET must be set');
-}
-
-export interface AuthRequest extends Request {
-  userId?: number;
 }
 
 export const authMiddleware = (req: AuthRequest, res: Response, next: NextFunction): void => {
