@@ -13,7 +13,12 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const corsOrigin = process.env.CORS_ORIGIN || 'http://localhost:3000';
 
-app.use(cors({ origin: corsOrigin, credentials: true }));
+// Support wildcard, single origin, or comma-separated origins
+const corsOptions = {
+  origin: corsOrigin === '*' ? true : corsOrigin.split(',').map(s => s.trim()),
+  credentials: true,
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Routes
