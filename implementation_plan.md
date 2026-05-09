@@ -26,7 +26,8 @@ graph TB
         Q[(courses)]
         R[(placements)]
     end
-    Frontend --> Backend --> DB
+    A --> G
+    G --> L
 ```
 
 ## Phase 1: Backend Setup
